@@ -4,5 +4,12 @@
 import PackageDescription
 
 let package = Package(
-        name: "GD"
+        name: "GD",
+        products: [
+            .library(name:"GD", targets: ["GD"])
+        ],
+        targets: [
+            .systemLibrary(name: "cgd", pkgConfig: "gdlib"),
+            .target(name: "GD", dependencies: ["cgd"])
+        ]
 )
