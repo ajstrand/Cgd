@@ -1,5 +1,11 @@
-module GD [system] {
-  umbrella header "gd.h"
-  link "gd"
-  export *
+module Cgdlinux [system] {
+	header "/usr/include/gd.h"
+	link "gd"
+	export *
+}
+
+module Cgdmac [system] {
+	header "/usr/local/include/gd.h"
+	link "gd"
+	export *
 }
