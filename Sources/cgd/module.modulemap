@@ -1,4 +1,4 @@
-module Cgdlinux [system] {
+module GD [system] {
 	header "/usr/include/gd.h"
 	link "gd"
 	export *
