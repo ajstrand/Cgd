@@ -1,4 +1,5 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.5.3
+
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 // #if swift(>=5.2) && !os(Linux)
 // let pkgConfig: String? = nil
@@ -16,36 +17,24 @@
 // ]
 // #endif
 
-
-// let package = Package(
-//         name: "GD",
-//         products: [
-//             .library(name:"GD", targets: ["GD"])
-//         ],
-    
-//         targets: [
-//              .systemLibrary(name: "cgd", pkgConfig: pkgConfig, providers: providers),
-//             .target(name: "GD", dependencies: ["cgd"])
-//         ]
-// )
-
 import PackageDescription
 
 
 let package = Package(
-    name: "GD",
-   
-      products: [
-            .library(name:"GD", targets: ["GD"])
-        ],
-    
-        targets: [
-             .systemLibrary(name: "cgd", 
-             pkgConfig: "libgd-dev", 
-             providers: [
-        .brew(["gd"]),
+         name: "Cgdlinux",
+         products: [
+        // The external product of our package is an importable
+        // library that has the same name as the package itself:
+        .library(
+            name: "Cgd",
+            targets: ["Cgd"]
+        )
+    ],
+     targets: [
+    .systemLibrary(name: "libgd",
+       pkgConfig: "gdlib",
+    providers: [
         .apt(["libgd-dev"])
-        ]),
-            .target(name: "GD", dependencies: ["cgd"])
-        ]
+    ]), .target(name: "Cgd")
+  ]
 )

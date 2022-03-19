@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Cgd",
+            "program": "${workspaceFolder:GD}/.build/debug/Cgd",
+            "args": [],
+            "cwd": "${workspaceFolder:GD}",
+            "preLaunchTask": "swift: Build Debug Cgd"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release Cgd",
+            "program": "${workspaceFolder:GD}/.build/release/Cgd",
+            "args": [],
+            "cwd": "${workspaceFolder:GD}",
+            "preLaunchTask": "swift: Build Release Cgd"
+        }
+    ]
+}
